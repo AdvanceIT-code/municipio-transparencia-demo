@@ -1,31 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <title>Mapa de Puntos Clave - Zavalla</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/> 
+    <!-- Usamos cdnjs como alternativa a unpkg -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css"/> 
     <style>
-        #map { height: 100vh; }
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
+
 <div id="map"></div>
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> 
+
+<!-- Usamos cdnjs también para el JS -->
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script> 
+
 <script>
-    // Coordenadas del centro de Zavalla, Santa Fe, Argentina (corregidas)
+    // Coordenadas del centro de Zavalla
     var zavallaCenter = [-33.0900, -60.9100]; 
 
-    var map = L.map('map').setView(zavallaCenter, 14); // Nivel de zoom ajustado para Zavalla
+    // Inicializamos el mapa con OpenStreetMap
+    var map = L.map('map').setView(zavallaCenter, 14);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    // Capa de tiles de OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',  {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // Marcadores de puntos importantes en Zavalla (coordenadas corregidas)
+    // Marcadores de puntos importantes
     L.marker([-33.0895, -60.9095]).addTo(map)
         .bindPopup("<b>Plaza San Martín</b><br>El corazón de Zavalla, rodeada de edificios importantes.")
-        .openPopup(); // Se abre por defecto
+        .openPopup();
 
     L.marker([-33.0905, -60.9105]).addTo(map)
         .bindPopup("<b>Comuna de Zavalla</b><br>Sede del gobierno local.");
@@ -34,7 +44,7 @@
         .bindPopup("<b>Iglesia Nuestra Señora del Carmen</b><br>Histórica iglesia local.");
 
     L.marker([-33.0915, -60.9115]).addTo(map)
-        .bindPopup("<b>Escuela Primaria N° 229 "Juan B. Alberdi"</b><br>Una de las principales instituciones educativas.");
+        .bindPopup("<b>Escuela Primaria N° 229 'Juan B. Alberdi'</b><br>Una de las principales instituciones educativas.");
 
     L.marker([-33.0920, -60.9130]).addTo(map)
         .bindPopup("<b>Estación de Trenes (Ex Ferrocarril General Belgrano)</b><br>Punto histórico y referente de la localidad.");
@@ -42,9 +52,27 @@
     L.marker([-33.0930, -60.9085]).addTo(map)
         .bindPopup("<b>Centro de Salud Dr. Chesta</b><br>Principal centro de atención médica.");
 
-    L.marker([-33.0870, -60.9120]).addTo(map)
-        .bindPopup("<b>Club Atlético Zavalla</b><br>Importante centro deportivo y social.");
+    // Marcador para Advance IT - Lisandro de la Torre 2351, Zavalla
+    L.marker([-33.0912, -60.9110]).addTo(map)
+        .bindPopup("<b>Advance IT</b><br>Dirección: Lisandro de la Torre 2351, Zavalla.");
+</script>
+<script>
+    var markers = [
+    [-33.0895, -60.9095],
+    [-33.0905, -60.9105],
+    [-33.0880, -60.9080],
+    [-33.0915, -60.9115],
+    [-33.0920, -60.9130],
+    [-33.0930, -60.9085],
+    [-33.0912, -60.9110] // Advance IT
+];
 
+var group = L.featureGroup().addTo(map);
+markers.forEach(function(coord) {
+    L.marker(coord).addTo(group);
+});
+
+map.fitBounds(group.getBounds());
 </script>
 </body>
 </html>
