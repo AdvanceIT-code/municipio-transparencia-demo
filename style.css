@@ -1,1 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    padding: 20px;
+    max-width: 960px;
+    margin: auto;
+}
 
+header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+h1 {
+    color: #005792;
+}
+
+.data-section, .dashboard, .map-section, .calendar, .documents, .feedback {
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    iframe {
+        height: auto;
+        min-height: 300px;
+    }
+
+    .data-section, .dashboard, .map-section, .calendar, .documents, .feedback {
+        margin-top: 20px;
+    }
+}
