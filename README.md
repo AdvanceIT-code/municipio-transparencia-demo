@@ -18,4 +18,4 @@ Demostrar cómo un gobierno local puede publicar información de gestión de for
 Este modelo es ideal para pequeños y medianos municipios, donde la transparencia digital puede construir confianza ciudadana sin grandes inversiones.
 
 ## Ver Sitio
-👉 [Ver sitio en vivo aquí](https://advanceit-code.github.io/municipio-transparencia-demo/) 
+👉 [Ver sitio en vivo aquí](https://advanceit-code.github.io/municipio-transparencia-demo/index.html) 
