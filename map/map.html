@@ -13,8 +13,8 @@
 <div id="map"></div>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> 
 <script>
-    // Coordenadas aproximadas del centro de Zavalla, Santa Fe, Argentina
-    var zavallaCenter = [-33.0135, -60.8930]; 
+    // Coordenadas del centro de Zavalla, Santa Fe, Argentina (corregidas)
+    var zavallaCenter = [-33.0900, -60.9100]; 
 
     var map = L.map('map').setView(zavallaCenter, 14); // Nivel de zoom ajustado para Zavalla
 
@@ -22,26 +22,27 @@
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // Marcadores de puntos importantes en Zavalla
-    L.marker([-33.0125, -60.8935]).addTo(map)
-        .bindPopup("<b>Plaza San Martín</b><br>El corazón de Zavalla, rodeada de edificios importantes.").openPopup();
+    // Marcadores de puntos importantes en Zavalla (coordenadas corregidas)
+    L.marker([-33.0895, -60.9095]).addTo(map)
+        .bindPopup("<b>Plaza San Martín</b><br>El corazón de Zavalla, rodeada de edificios importantes.")
+        .openPopup(); // Se abre por defecto
 
-    L.marker([-33.0150, -60.8910]).addTo(map)
-        .bindPopup("<b>Comuna de Zavalla</b><br>Sede del gobierno local.").openPopup(); // Adjusted this to auto-open since it's a key point
+    L.marker([-33.0905, -60.9105]).addTo(map)
+        .bindPopup("<b>Comuna de Zavalla</b><br>Sede del gobierno local.");
 
-    L.marker([-33.0130, -60.8950]).addTo(map)
+    L.marker([-33.0880, -60.9080]).addTo(map)
         .bindPopup("<b>Iglesia Nuestra Señora del Carmen</b><br>Histórica iglesia local.");
 
-    L.marker([-33.0100, -60.8900]).addTo(map)
+    L.marker([-33.0915, -60.9115]).addTo(map)
         .bindPopup("<b>Escuela Primaria N° 229 "Juan B. Alberdi"</b><br>Una de las principales instituciones educativas.");
 
-    L.marker([-33.0080, -60.8920]).addTo(map)
+    L.marker([-33.0920, -60.9130]).addTo(map)
         .bindPopup("<b>Estación de Trenes (Ex Ferrocarril General Belgrano)</b><br>Punto histórico y referente de la localidad.");
         
-    L.marker([-33.0165, -60.8945]).addTo(map)
+    L.marker([-33.0930, -60.9085]).addTo(map)
         .bindPopup("<b>Centro de Salud Dr. Chesta</b><br>Principal centro de atención médica.");
 
-    L.marker([-33.0180, -60.8870]).addTo(map)
+    L.marker([-33.0870, -60.9120]).addTo(map)
         .bindPopup("<b>Club Atlético Zavalla</b><br>Importante centro deportivo y social.");
 
 </script>
