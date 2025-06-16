@@ -14,7 +14,7 @@ header {
 }
 
 h1 {
-    color: #005792;
+    color: #8DE5FD;
 }
 
 .data-section, .dashboard, .map-section, .calendar, .documents, .feedback {
@@ -23,7 +23,12 @@ h1 {
 a{
     color:#8AE7FC;
 }
-
+p{
+ color:white;   
+}
+h2{
+    color:#005792;
+}
 @media (max-width: 768px) {
     body {
         padding: 10px;
