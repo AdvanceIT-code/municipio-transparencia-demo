@@ -20,6 +20,9 @@ h1 {
 .data-section, .dashboard, .map-section, .calendar, .documents, .feedback {
     margin-top: 30px;
 }
+a{
+    color:#8AE7FC;
+}
 
 @media (max-width: 768px) {
     body {
